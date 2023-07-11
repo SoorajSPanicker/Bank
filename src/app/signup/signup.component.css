@@ -1,0 +1,36 @@
+form{
+    border-style: solid;
+    border-color: salmon;
+    margin-top: 40px;
+    margin-left: 38%;
+    padding: 5% 5%;
+    font-size: larger;
+}
+label{
+    margin-top: 10px;
+}
+.s{
+    margin-left: 30%;
+    margin-top: 50px;
+}
+@media(max-width:1000px){
+    form{
+        margin-left: 30%
+    };
+}
+@media(max-width:500px){
+    form{
+        font-size: large;
+        margin-left: 20%;
+    }
+}
+@media(max-width:400px){
+    form{
+        margin-left: 16%;
+    }
+}
+@media(max-width:350px){
+    form{
+        margin-left: 10%;
+    }
+}

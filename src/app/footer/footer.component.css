@@ -1,0 +1,25 @@
+#f{
+    background-color: salmon;
+    height: 60px;
+    margin-top: 40%;
+}
+@media(max-width:1300px){
+    #f{
+        margin-top: 70%;
+    }
+}
+@media(max-width:500px){
+    #f{
+        margin-top: 120%;
+    }
+}
+@media(max-width:400px){
+    #f{
+        margin-top: 137%;
+    }
+}
+@media(max-width:350px){
+    #f{
+        margin-top: 157%;
+    }
+}

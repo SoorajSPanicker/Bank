@@ -1,0 +1,30 @@
+.row{
+    border: solid rgb(244, 30, 7);
+    color: salmon;
+}
+.col{
+    border: solid rgb(244, 30, 7);
+}
+button{
+    background-color: salmon;
+    
+}
+.p{
+    height: 75%;
+    width: 90%;
+}
+input{
+    float: right;
+}
+label{
+    margin-bottom: 10px;
+}
+.stat{
+    margin-left: 13%;
+}
+.st{
+    margin-top: 10px;
+}
+.s{
+    margin-left: 40%;
+}
