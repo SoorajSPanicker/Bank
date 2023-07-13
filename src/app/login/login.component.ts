@@ -14,22 +14,26 @@ export class LoginComponent {
   // ngOnInit(): void {
 
   // }
-  login(a:any,b:any){
-    this.acno=a.value
-    this.psw=b.value
-    console.log(a.value);
-    console.log(b.value);
+  login(){
+    console.log(this.acno);
+    console.log(this.psw);
+    
+    
+    // this.acno=a.value
+    // this.psw=b.value
+    // console.log(a.value);
+    // console.log(b.value);
     
     
   }
-  acnoChange(event:any){
-    // console.log(event.target.value);
-    this.acno=event.target.value
-    console.log(this.acno);
+  // acnoChange(event:any){
+  //   // console.log(event.target.value);
+  //   this.acno=event.target.value
+  //   console.log(this.acno);
     
     
 
-  }
+  // }
 
 
 }
