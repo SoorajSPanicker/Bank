@@ -4,9 +4,9 @@
     <img src="assets/images/bank4.jpg" alt="image">
     <form action="" class="float-end">
       <label for="acno">Enter the account number</label><br />
-      <input type="text" id="acno" name="acno" class="w-100" [placeholder]="pdata" /><br />
+      <input (change)="acnoChange($event)" type="text" id="acno" name="acno" class="w-100" [placeholder]="pdata" /><br />
       <label for="pass">Enter the password</label><br />
-      <input type="password" id="pass" name="pass" class="w-100" />
+      <input (change)="acnoChange($event)" type="password" id="pass" name="pass" class="w-100" />
       <input type="submit" value="login" class="sub" (click)="login()" />
       <p>Doesn't have an account?<a href="">Create account</a></p>
     </form>
