@@ -1,11 +1,11 @@
 <body class="container">
-  <h1>Hi,{{ data }}</h1>
+  <h1>Hi,{{ data }} {{serviceData}}</h1>
+  
   <div>
     <img src="assets/images/bank4.jpg" alt="image" />
     <form action="" class="float-end">
       <label for="acno">Enter the account number</label><br />
       <input
-        [(ngModel)]="acno"
         type="text"
         id="acno"
         name="acno"
@@ -13,13 +13,7 @@
         [placeholder]="pdata"
       /><br />
       <label for="pass">Enter the password</label><br />
-      <input
-        [(ngModel)]="psw"
-        type="password"
-        id="pass"
-        name="pass"
-        class="w-100"
-      />
+      <input type="password" id="pass" name="pass" class="w-100" />
       <input type="submit" value="login" class="sub" (click)="login()" />
       <p>Doesn't have an account?<a href="\register">Create account</a></p>
     </form>
