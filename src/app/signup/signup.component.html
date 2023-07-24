@@ -1,16 +1,20 @@
 <body class="container">
     <div>
-        <form action="" class="float-start">
+        <form [formGroup]="signUpModelForm" action="" class="float-start">
             <h3 class="text-center">Sign Up</h3>
             <label for="acno">Enter the account number</label><br>
-            <input type="text" id="acno" name="acno"><br>
+            <input formControlName="acno" type="text" id="acno" name="acno"><br>
             <label for="usern">Enter the username</label><br>
-            <input type="text" id="usern" name="usern"><br>
+            <input formControlName="uname" type="text" id="usern" name="usern"><br>
             <label for="pass">Enter password</label><br>
-            <input type="password" id="pass" name="pass"><br>
+            <input formControlName="psw" type="password" id="pass" name="pass"><br>
             <label for="cpass">Confirm password</label><br>
-            <input type="password" id="cpass" name="cpass"><br>
+            <input formControlName="cpsw" type="password" id="cpass" name="cpass"><br>
+            <div *ngIf="pswMatch">
+                <p class="text-danger">Password doesn't match</p>
+            </div><br>
             <input (click)="signup()" class="s" type="submit" value="submit">
+            
         </form>
     </div>
 </body>
