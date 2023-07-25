@@ -1,4 +1,4 @@
-import { Component } from '@angular/core';
+import { Component, OnInit } from '@angular/core';
 import { Router } from '@angular/router';
 
 @Component({
@@ -6,8 +6,14 @@ import { Router } from '@angular/router';
   templateUrl: './home.component.html',
   styleUrls: ['./home.component.css']
 })
-export class HomeComponent {
+export class HomeComponent implements OnInit {
+  user:any=""
   constructor(private rout:Router){ }
+  ngOnInit(): void {
+    if(localStorage.getItem("currentUname")){
+      this.user=localStorage.getItem("currentUname")
+    }
+  }
   logout(){
     this.rout.navigateByUrl("")
   }

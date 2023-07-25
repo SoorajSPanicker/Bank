@@ -4,15 +4,24 @@
             <h3 class="text-center">Sign Up</h3>
             <label for="acno">Enter the account number</label><br>
             <input formControlName="acno" type="text" id="acno" name="acno"><br>
+            <div *ngIf="signUpModelForm.get('acno')?.errors&&signUpModelForm.get('acno')?.touched">
+                <p class="text-danger">Accept numbers only</p>
+            </div>
             <label for="usern">Enter the username</label><br>
             <input formControlName="uname" type="text" id="usern" name="usern"><br>
+            <div *ngIf="signUpModelForm.get('uname')?.errors&&signUpModelForm.get('uname')?.touched">
+                <p class="text-danger">Accept letters only</p>
+            </div>
             <label for="pass">Enter password</label><br>
             <input formControlName="psw" type="password" id="pass" name="pass"><br>
+            <div *ngIf="signUpModelForm.get('psw')?.errors&&signUpModelForm.get('psw')?.touched">
+                <p class="text-danger">Accept letters and numbers only</p>
+            </div>
             <label for="cpass">Confirm password</label><br>
             <input formControlName="cpsw" type="password" id="cpass" name="cpass"><br>
             <div *ngIf="pswMatch">
                 <p class="text-danger">Password doesn't match</p>
-            </div><br>
+            </div>
             <input (click)="signup()" class="s" type="submit" value="submit">
             
         </form>

@@ -11,13 +11,21 @@ export class DataService {
   // accessData(data:any){
   //   console.log(data);
   // }
-  // signupApi(acno:any,uname:any,psw:any){
-  //   const bodyData={                                   //bodyData is just a variable
-  //     acno,
-  //     uname,
-  //     psw
-  //   } 
-  //   return this.http.post('http://localhost:3000/bankuser/user-register',bodyData)
-  // }
+  //register api
+  signupApi(acno:any,uname:any,psw:any){
+    const bodyData={                                   //bodyData is just a variable
+      acno,
+      uname,
+      psw
+    } 
+    return this.http.post('http://localhost:3000/bankuser/user-register',bodyData)
+  }
+  //login api
+  loginApi(acno:any,psw:any){
+    const bodyData={
+      acno,psw
+    }
+    return this.http.post('http://localhost:3000/bankuser/user-login',bodyData)
+  }
 }
 

@@ -3,19 +3,27 @@
   
   <div>
     <img src="assets/images/bank4.jpg" alt="image" />
-    <form action="" class="float-end">
+    <form [formGroup]="loginModelForm" action="" class="float-end">
       <label for="acno">Enter the account number</label><br />
       <input
+        formControlName="acno"
         type="text"
         id="acno"
         name="acno"
         class="w-100"
         [placeholder]="pdata"
       /><br />
+      <div *ngIf="loginModelForm.get('acno')?.errors&&loginModelForm.get('acno')?.touched">
+        <p class="text-danger">Accept numbers only</p>
+    </div>
       <label for="pass">Enter the password</label><br />
-      <input type="password" id="pass" name="pass" class="w-100" />
+      <input formControlName="psw" type="password" id="pass" name="pass" class="w-100" />
+      <div *ngIf="loginModelForm.get('psw')?.errors&&loginModelForm.get('psw')?.touched">
+        <p class="text-danger">Accept numbers and letters only</p>
+      </div>
       <input type="submit" value="login" class="sub" (click)="login()" />
       <p>Doesn't have an account?<a href="\register">Create account</a></p>
     </form>
   </div>
 </body>
+
