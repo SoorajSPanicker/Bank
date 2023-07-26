@@ -11,6 +11,7 @@ export class HomeComponent implements OnInit {
   user:any=""
   acno:any
   profileData:any={}
+  profileBal:any={}
   constructor(private rout:Router,private ds:DataService){ }
   ngOnInit(): void {
     if(localStorage.getItem("currentUname")){
@@ -24,14 +25,26 @@ export class HomeComponent implements OnInit {
   profileView(){
     if(localStorage.getItem("currentAcno")){
       this.acno=localStorage.getItem("currentAcno")
-      console.log(this.acno)
+      console.log(this.acno);
 
     }
     this.ds.getProfile(this.acno).subscribe((response:any)=>{
-      console.log(response)
+      console.log(response);
       this.profileData=response
 
 
+    })
+  }
+  balanceView(){
+    if(localStorage.getItem("currentAcno")){
+      this.acno=localStorage.getItem("currentAcno")
+      console.log(this.acno);
+      
+    }
+    this.ds.getBalance(this.acno).subscribe((response:any)=>{
+      console.log(response);
+      this.profileBal=response
+      
     })
   }
   

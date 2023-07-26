@@ -31,5 +31,9 @@ export class DataService {
   getProfile(acno:any){
     return this.http.get('http://localhost:3000/bankuser/user-profile/'+acno)
   }
+  //balance enquiry details
+  getBalance(acno:any){
+    return this.http.get('http://localhost:3000/bankuser/bal-enquiry/'+acno)
+  }
 }
 

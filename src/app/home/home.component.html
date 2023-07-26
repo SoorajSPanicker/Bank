@@ -9,7 +9,7 @@
     class="col pt-2 pb-2"
     
   >
-    <button data-bs-toggle="offcanvas" data-bs-target="#offcanvasExample" aria-controls="offcanvasExample">Balance Enquiry</button>
+    <button (click)="balanceView()" data-bs-toggle="offcanvas" data-bs-target="#offcanvasExample" aria-controls="offcanvasExample">Balance Enquiry</button>
   </div>
   <div class="col pt-2 pb-2"><button data-bs-toggle="modal" data-bs-target="#exampleModal1">Money Transfer</button></div>
   <div class="col pt-2 pb-2"><button>Account Statement</button></div>
@@ -67,7 +67,7 @@
     </div>
     <div class="offcanvas-body">
       <div>
-        hi "username" your current balance in account number 1234 is <h4>Balance 0000</h4>
+        Hi "{{profileBal.uname}}" your current balance in account number {{profileBal.acno}} is <h4>Balance {{profileBal.balance}}</h4>
        
         <!-- <p>User Name:Sooraj</p>
         <p>Account Number:1234</p>
