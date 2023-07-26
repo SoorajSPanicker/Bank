@@ -1,7 +1,7 @@
 <div class="row text-center">
   <div class="col pt-2 pb-2">
     <!-- <a href="">View Profile</a> -->
-    <button data-bs-toggle="modal" data-bs-target="#exampleModal">
+    <button (click)="profileView()" data-bs-toggle="modal" data-bs-target="#exampleModal">
       View Profile
     </button>
   </div>
@@ -48,8 +48,8 @@
       <div class="modal-body">
         <div><img class="p" src="assets/images/profile image.jpg" alt="" /></div>
         <div>
-          <p>User Name:Sooraj</p>
-          <p>Account Number:1234</p>
+          <p>User Name: {{profileData.uname}}</p>
+          <p>Account Number: {{profileData.acno}}</p>
         </div>
       </div>
       <div class="modal-footer">
