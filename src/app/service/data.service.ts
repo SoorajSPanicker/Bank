@@ -31,9 +31,17 @@ export class DataService {
   getProfile(acno:any){
     return this.http.get('http://localhost:3000/bankuser/user-profile/'+acno)
   }
-  //balance enquiry details
+  //get balance details
   getBalance(acno:any){
     return this.http.get('http://localhost:3000/bankuser/bal-enquiry/'+acno)
+  }
+  //money transfer
+  //fromAcno,toAcno,fromAcnoPsw,amount,DateAndTime
+  moneyTransferApi(fromAcno:any,toAcno:any,psw:any,amount:any,date:any){
+    const bodyData={
+      fromAcno,toAcno,psw,amount,date
+    }
+    return this.http.post('http://localhost:3000/bankuser/money-transfer',bodyData)
   }
 }
 
