@@ -16,6 +16,7 @@ export class HomeComponent implements OnInit {
   profileBal: any = {};
   message:any='';
   status:any=true
+  shareAcno:any=''
   //MODEL FORM FOR MONEY TRANSFER
   moneyTransferForm = this.fb.group({
     toAcno: ['', [Validators.required, Validators.pattern('[0-9]+')]],
@@ -29,11 +30,17 @@ export class HomeComponent implements OnInit {
     private datePipe:DatePipe
   ) {}
   ngOnInit(): void {
+    if(!localStorage.getItem("currentAcno")){
+      alert("please login first")
+      this.rout.navigateByUrl("")
+    }
     if (localStorage.getItem('currentUname')) {
       this.user = localStorage.getItem('currentUname');
     }
   }
   logout() {
+    localStorage.removeItem("currentAcno")
+    localStorage.removeItem("currentUname")
     this.rout.navigateByUrl('');
   }
 
@@ -95,5 +102,28 @@ export class HomeComponent implements OnInit {
       alert('Invalid form');
       this.status=false
     }
+  }
+  statement(){
+    this.rout.navigateByUrl("segment")
+  }
+  deleteAc(){
+    //share data
+    if(localStorage.getItem('currentAcno')){
+      this.shareAcno=localStorage.getItem('currentAcno')
+      // console.log(this.shareAcno);
+      
+    }
+  }
+
+  cancel(){
+    this.shareAcno=""
+  }
+  deleteAccount(event:any){
+    console.log(event);
+    this.ds.acDelete(event).subscribe((result:any)=>{
+      alert(`${event} deleted successfully`)
+      this.logout()
+    })
+    
   }
 }

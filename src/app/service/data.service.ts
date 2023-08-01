@@ -43,5 +43,17 @@ export class DataService {
     }
     return this.http.post('http://localhost:3000/bankuser/money-transfer',bodyData)
   }
+
+  //transaction history api
+  transactionHistory(acno:any){
+    return this.http.get('http://localhost:3000/bankuser/user-history/'+acno)
+  }
+  //delete account api
+  acDelete(acno:any){
+    return this.http.delete('http://localhost:3000/bankuser/user-delete/'+acno)
+  }
+
+
+
 }
 

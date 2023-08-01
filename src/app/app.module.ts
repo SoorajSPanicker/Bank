@@ -12,6 +12,7 @@ import { HistoryComponent } from './history/history.component';
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import {HttpClientModule} from '@angular/common/http';
 import { DatePipe } from '@angular/common';
+import { DeleteComponent } from './delete/delete.component';
 
 @NgModule({
   declarations: [
@@ -21,7 +22,8 @@ import { DatePipe } from '@angular/common';
     FooterComponent,
     SignupComponent,
     HomeComponent,
-    HistoryComponent
+    HistoryComponent,
+    DeleteComponent
   ],
   imports: [
     BrowserModule,

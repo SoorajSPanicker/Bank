@@ -12,20 +12,22 @@
     <button (click)="balanceView()" data-bs-toggle="offcanvas" data-bs-target="#offcanvasExample" aria-controls="offcanvasExample">Balance Enquiry</button>
   </div>
   <div class="col pt-2 pb-2"><button  data-bs-toggle="modal" data-bs-target="#exampleModal1">Money Transfer</button></div>
-  <div class="col pt-2 pb-2"><button>Account Statement</button></div>
+  <div class="col pt-2 pb-2"><button (click)="statement()">Account Statement</button></div>
   <div class="col pt-2 pb-2"><button (click)="logout()">Log Out</button></div>
-  <div class="col pt-2 pb-2"><button>Delete Account</button></div>
+  <div class="col pt-2 pb-2"><button (click)="deleteAc()">Delete Account</button></div>
   <div class="col pt-2 pb-2"><button><i class="fa-solid fa-hand-holding-dollar"></i></button></div>
 </div>
 <div class="container mt-5">
   <h2 class="text-center">Welcome {{user}}</h2>
   <h1 class="text-center">Enjoy Net Banking with SBI</h1>
-  <p>
+  <p [ngClass]="shareAcno?'c':''">
     Lorem ipsum, dolor sit amet consectetur adipisicing elit. Consequatur
     eligendi sapiente corrupti libero consectetur illum ullam non. Repellat,
     laborum! Accusamus ad tempore perferendis facilis quasi quaerat aspernatur
     esse aut expedita?
   </p>
+  <app-delete (onDelete)="deleteAccount($event)" (onCancel)="cancel()" [childAcno]="shareAcno"></app-delete>
+  
 </div>
 <div
   class="modal fade"

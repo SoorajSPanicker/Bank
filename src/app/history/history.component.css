@@ -7,3 +7,10 @@ img {
 button{
     background-color: salmon;
 }
+thead{
+  background-color: rgb(190, 158, 217);
+}
+.but{
+  margin-top: 2%;
+  margin-left: 75%;
+}
