@@ -1,10 +1,11 @@
 <div class="container">
   <img class="float-end" src="assets/images/statement.webp" alt="" />
   <h1 class="text-center mt-3">Account Statement</h1>
+  <h5 class="text-center">{{date | date :'medium'}}</h5>
   <div class="btn-group mt-5" role="group" aria-label="Basic example">
-    <button type="button" class="btn">All</button>
-    <button type="button" class="btn">Debit</button>
-    <button type="button" class="btn">Credit</button>
+    <button (click)="searchKeyChange('')" type="button" class="btn">All</button>
+    <button (click)="searchKeyChange('DEBIT')" type="button" class="btn">Debit</button>
+    <button (click)="searchKeyChange('CREDIT')"  type="button" class="btn">Credit</button>
   </div>
   <br />
   <!-- <div class="row w-50 mt-2">
@@ -22,7 +23,7 @@
       <th scope="col">Account Holder Name</th>
       <th scope="col">Date</th>
     </thead>
-    <tbody *ngFor="let i of transactions;let j = index">
+    <tbody *ngFor="let i of transactions | data :searchKey:'type';let j = index">
       <td >{{j+1}}</td>
       <td >{{i.type}}</td>
       <td >{{i.amount}}</td>

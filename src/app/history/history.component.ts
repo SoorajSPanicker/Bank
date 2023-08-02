@@ -9,8 +9,12 @@ import { DataService } from '../service/data.service';
 export class HistoryComponent implements OnInit {
   acno:any
   transactions:any
+  date:any
+  searchKey:any=""
   constructor(private ds:DataService){}
   ngOnInit():void{
+    //date
+    this.date=new Date()
     //acno
     if(localStorage.getItem("currentAcno")){
       this.acno=localStorage.getItem("currentAcno")
@@ -20,6 +24,9 @@ export class HistoryComponent implements OnInit {
     console.log(this.transactions);
     
   })
+  }
+  searchKeyChange(key:any){
+    this.searchKey=key
   }
 
 }
