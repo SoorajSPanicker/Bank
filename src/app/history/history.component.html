@@ -31,6 +31,6 @@
       <td >{{i.date}}</td>
     </tbody>
   </table>
-  <button class="mt-2">Export As<i class="fa-solid fa-file-pdf"></i></button>
-  <button class="but">Back To Home<i class="fa-solid fa-house-user"></i></button>
+  <button (click)="convertPdf()" class="mt-2">Export As<i class="fa-solid fa-file-pdf"></i></button>
+  <button class="but" (click)="home()">Back To Home<i class="fa-solid fa-house-user"></i></button>
 </div>
