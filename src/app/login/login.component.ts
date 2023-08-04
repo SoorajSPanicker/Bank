@@ -39,6 +39,9 @@ export class LoginComponent implements OnInit{
         //store uname in local storage
         localStorage.setItem("currentUname",response.uname)
         localStorage.setItem("currentAcno",response.acno)
+        localStorage.setItem("token",JSON.stringify(response.token))
+        // console.log(response.token);
+        
         this.rou.navigateByUrl("home")
       },
       response=>{
