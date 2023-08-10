@@ -3,6 +3,11 @@
     height: 60px;
     margin-top: 40%;
 }
+@media(max-width:1450px){
+    #f{
+        margin-top: 55%;
+    }
+}
 @media(max-width:1300px){
     #f{
         margin-top: 70%;

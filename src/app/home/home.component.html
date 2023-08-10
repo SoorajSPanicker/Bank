@@ -1,7 +1,7 @@
-<div class="row text-center">
-  <div class="col pt-2 pb-2">
+<!-- <div class="row text-center">
+  <div class="col pt-2 pb-2"> -->
     <!-- <a href="">View Profile</a> -->
-    <button (click)="profileView()" data-bs-toggle="modal" data-bs-target="#exampleModal">
+    <!-- <button (click)="profileView()" data-bs-toggle="modal" data-bs-target="#exampleModal">
       View Profile
     </button>
   </div>
@@ -16,7 +16,35 @@
   <div class="col pt-2 pb-2"><button (click)="logout()">Log Out</button></div>
   <div class="col pt-2 pb-2"><button (click)="deleteAc()">Delete Account</button></div>
   <div class="col pt-2 pb-2"><button><i class="fa-solid fa-hand-holding-dollar"></i></button></div>
-</div>
+</div> -->
+<nav class="navbar navbar-expand-xl bg-body-tertiary">
+  <div class="container-fluid">
+    <button
+      class="navbar-toggler"
+      type="button"
+      data-bs-toggle="collapse"
+      data-bs-target="#navbarNav"
+      aria-controls="navbarNav"
+      aria-expanded="false"
+      aria-label="Toggle navigation"
+    >
+      <span class="navbar-toggler-icon"></span>
+    </button>
+    <div class="collapse navbar-collapse" id="navbarNav">
+      <div class="navbar-nav">
+        <button class="px-4 me-5 ms-4" (click)="profileView()" data-bs-toggle="modal" data-bs-target="#exampleModal">View Profile</button>
+        <button class="px-4 me-5 ms-4" (click)="balanceView()" data-bs-toggle="offcanvas" data-bs-target="#offcanvasExample" aria-controls="offcanvasExample">Balance Enquiry</button>
+        <button class="px-4 me-5 ms-4" data-bs-toggle="modal" data-bs-target="#exampleModal1">Money Transfer</button>
+        <button class="px-4 me-5 ms-4" (click)="statement()">Account Statement</button>
+        <button class="px-4 me-5 ms-4" (click)="logout()">Log Out</button>
+        <button class="px-4 me-5 ms-4" (click)="deleteAc()">Delete Account</button>
+        <button class="px-4 me-5 ms-4" href="#">
+          <i class="fa-solid fa-hand-holding-dollar"></i>
+        </button>
+      </div>
+    </div>
+  </div>
+</nav>
 <div class="container mt-5">
   <h2 class="text-center">Welcome {{user}}</h2>
   <h1 class="text-center">Enjoy Net Banking with SBI</h1>
@@ -48,7 +76,7 @@
         ></button>
       </div>
       <div class="modal-body">
-        <div><img class="p" src="assets/images/profile image.jpg" alt="" /></div>
+        <div><img class="p" src="https://i.postimg.cc/fLBrDVT5/profile-image.jpg" alt="" /></div>
         <div>
           <p>User Name: {{profileData.uname}}</p>
           <p>Account Number: {{profileData.acno}}</p>
@@ -95,7 +123,7 @@
           <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
         </div>
         <div class="modal-body">
-            <img src="assets/images/Moneytransfer.jpg" alt="" class="h-75 w-75 stat">
+            <img src="https://i.postimg.cc/3r0cPxQj/Moneytransfer.jpg" alt="" class="h-75 w-75 stat">
           <form [formGroup]="moneyTransferForm" action="" class="form-control form-control-sm st">
             <label for="toac">Recipient Account Number </label>
             <input formControlName="toAcno" type="text" for="toac" name="toac"><br>

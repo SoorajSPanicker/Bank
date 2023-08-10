@@ -10,7 +10,6 @@ import { FormBuilder, Validators } from '@angular/forms';
 })
 export class LoginComponent implements OnInit{
   data="Happy Banking With Us... "
-  pdata="Enter the account number"
   loginModelForm = this.fb.group({
     acno: ['', [Validators.required, Validators.pattern('[0-9]+')]],
     psw: ['', [Validators.required, Validators.pattern('[0-9a-zA-Z]+')]]

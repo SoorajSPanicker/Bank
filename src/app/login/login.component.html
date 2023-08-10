@@ -1,8 +1,8 @@
 <body class="container">
-  <h2>Hi,{{ data }} </h2> 
-  
+  <h2>Hi,{{ data }}</h2>
+
   <div>
-    <img src="assets/images/bank4.jpg" alt="image" />
+    <img src="https://i.postimg.cc/44wgx3FD/bank4.webp" alt="image" />
     <form [formGroup]="loginModelForm" action="" class="float-end">
       <h2 class="text-center mb-5">LOGIN</h2>
       <label for="acno">Enter the account number</label><br />
@@ -12,14 +12,29 @@
         id="acno"
         name="acno"
         class="w-100"
-        [placeholder]="pdata"
       /><br />
-      <div *ngIf="loginModelForm.get('acno')?.errors&&loginModelForm.get('acno')?.touched">
+      <div
+        *ngIf="
+          loginModelForm.get('acno')?.errors &&
+          loginModelForm.get('acno')?.touched
+        "
+      >
         <p class="text-danger">Accept numbers only</p>
-    </div>
+      </div>
       <label for="pass">Enter the password</label><br />
-      <input formControlName="psw" type="password" id="pass" name="pass" class="w-100" />
-      <div *ngIf="loginModelForm.get('psw')?.errors&&loginModelForm.get('psw')?.touched">
+      <input
+        formControlName="psw"
+        type="password"
+        id="pass"
+        name="pass"
+        class="w-100"
+      />
+      <div
+        *ngIf="
+          loginModelForm.get('psw')?.errors &&
+          loginModelForm.get('psw')?.touched
+        "
+      >
         <p class="text-danger">Accept numbers and letters only</p>
       </div>
       <input type="submit" value="login" class="sub" (click)="login()" />
@@ -27,4 +42,3 @@
     </form>
   </div>
 </body>
-

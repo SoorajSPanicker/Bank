@@ -14,3 +14,61 @@ thead{
   margin-top: 2%;
   margin-left: 75%;
 }
+@media(max-width:1440px){
+  table{
+    width: 50%;
+  }
+}
+@media (max-width:1100px){
+  img{
+    width: 45%;
+  }
+  table{
+    width: 55%;
+  }
+  
+}
+@media (max-width:1030px){
+  img{
+    width: 40%;
+  }
+  
+}
+@media (max-width:800px){
+  .btn-group{
+    margin-left: 30%;
+    width: 15%;
+  }
+  img{
+    margin-top: 33%;
+  }
+}
+@media (max-width:450px){
+  h1{
+    margin-left: 5%;
+  }
+  h5{
+    margin-left: 6%;
+  }
+  img{
+    display:none;
+  }
+  .btn-group{
+    margin-left:50%;
+  }
+  table{
+    width: 100%;
+  }
+  .but{
+    margin-left: 65%;
+  }
+  
+}
+@media (max-width:350px){
+  .btn-group{
+    margin-left: 40%;
+  }
+  .but{
+    margin-left: 50%;
+  }
+}
