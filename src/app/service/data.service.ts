@@ -37,22 +37,22 @@ export class DataService {
       uname,
       psw
     } 
-    return this.http.post('http://localhost:3000/bankuser/user-register',bodyData)
+    return this.http.post('https://bankserver-v70b.onrender.com/bankuser/user-register',bodyData)
   }
   //login api
   loginApi(acno:any,psw:any){
     const bodyData={
       acno,psw
     }
-    return this.http.post('http://localhost:3000/bankuser/user-login',bodyData)
+    return this.http.post('https://bankserver-v70b.onrender.com/bankuser/user-login',bodyData)
   }
   //get user profile details
   getProfile(acno:any){
-    return this.http.get('http://localhost:3000/bankuser/user-profile/'+acno,this.createHeader())
+    return this.http.get('https://bankserver-v70b.onrender.com/bankuser/user-profile/'+acno,this.createHeader())
   }
   //get balance details
   getBalance(acno:any){
-    return this.http.get('http://localhost:3000/bankuser/bal-enquiry/'+acno,this.createHeader())
+    return this.http.get('https://bankserver-v70b.onrender.com/bankuser/bal-enquiry/'+acno,this.createHeader())
   }
   //money transfer
   //fromAcno,toAcno,fromAcnoPsw,amount,DateAndTime
@@ -60,16 +60,16 @@ export class DataService {
     const bodyData={
       fromAcno,toAcno,psw,amount,date
     }
-    return this.http.post('http://localhost:3000/bankuser/money-transfer',bodyData,this.createHeader())
+    return this.http.post('https://bankserver-v70b.onrender.com/bankuser/money-transfer',bodyData,this.createHeader())
   }
 
   //transaction history api
   transactionHistory(acno:any){
-    return this.http.get('http://localhost:3000/bankuser/user-history/'+acno,this.createHeader())
+    return this.http.get('https://bankserver-v70b.onrender.com/bankuser/user-history/'+acno,this.createHeader())
   }
   //delete account api
   acDelete(acno:any){
-    return this.http.delete('http://localhost:3000/bankuser/user-delete/'+acno,this.createHeader())
+    return this.http.delete('https://bankserver-v70b.onrender.com/bankuser/user-delete/'+acno,this.createHeader())
   }
 
 
